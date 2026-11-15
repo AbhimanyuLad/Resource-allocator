@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Resource Details{% endblock %}
+
+{% block content %}
+
+<h2>Resource Details</h2>
+
+<p><strong>ID:</strong> {{ resource.id }}</p>
+<p><strong>Name:</strong> {{ resource.name }}</p>
+<p><strong>Description:</strong> {{ resource.description }}</p>
+<p><strong>Unit:</strong> {{ resource.unit }}</p>
+<p><strong>Active:</strong> {{ resource.is_active|yesno:"Yes,No" }}</p>
+
+<a href="{% url 'resource_update' resource.id %}"
+   class="btn btn-warning">Edit</a>
+
+<a href="{% url 'resource_list' %}"
+   class="btn btn-secondary">Back</a>
+
+{% endblock %}
